@@ -24,7 +24,16 @@ docker-compose up --build
 
 This command will start all defined services in the `docker-compose.yml` file. The application will be accessible on port 8080, and the PostgreSQL database will be available on port 5432.
 
+## CI/CD Setup
 
+This project includes GitHub Actions workflows for continuous integration and deployment:
 
+1. **Unit Tests**: Automatically runs tests on pushes to the main branch and pull requests.
+2. **Docker Build and Push**: Builds and pushes the Docker image to DockerHub on:
+    - Pushes to the main branch
+    - Creation of tags (starting with 'v')
+    - Manual triggering
+
+For more details, see the [.github](/.github) directory.
 
 
