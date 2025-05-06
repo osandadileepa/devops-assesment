@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:12.22
+    restart: always
+    environment:
+      POSTGRES_DB: bdb
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      BANK_POSTGRES_HOST: postgres:5432
+      BANK_POSTGRES_DB: bdb
+      BANK_POSTGRES_USER: test
+      BANK_POSTGRES_PASSWORD: test
+
+volumes:
+  postgres_data:
+    driver: local

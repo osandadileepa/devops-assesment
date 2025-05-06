@@ -1,0 +1,42 @@
+# Ignore version control directories and files
+.git
+.gitignore
+
+# Ignore Go build cache and module cache
+# These are typically located in the user's home directory
+# You can find the exact locations using 'go env GOCACHE' and 'go env GOMODCACHE'
+# Exclude common default locations
+~/.cache/go-build
+~/Library/Caches/go-build
+~\\AppData\\Local\\go-build
+$GOCACHE
+$GOMODCACHE
+
+# Ignore compiled binaries and executable files
+# This assumes your build output is in the current directory or a 'bin' directory
+*.exe
+*.bin
+bin/
+
+# Ignore vendor directory if you are not using Go Modules or are vendoring dependencies locally
+# If you are using Go Modules with a multi-stage build, you might copy specific dependencies
+vendor/
+
+# Ignore temporary files and directories
+*.tmp
+*~
+~*
+.#*
+
+# Ignore IDE files and directories
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore environment files that might contain sensitive information
+.env
+
+# Ignore any potential crash dump files
+*.dmp
