@@ -53,3 +53,8 @@ Push your results to the personal private repository and share the final version
     
 * CI for Unit Tests (Optional): Set up continuous integration for running unit tests. The command for executing tests is:
 ```go test -v -cover ./...```
+
+## Assessment Submission
+
+* Check the `SUBMISSION.md` file to check answers and instructions.
+* 

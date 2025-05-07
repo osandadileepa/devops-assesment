@@ -36,4 +36,25 @@ This project includes GitHub Actions workflows for continuous integration and de
 
 For more details, see the [.github](/.github) directory.
 
+## Kubernetes Deployment
 
+This project includes a Helm chart for deploying the application to Kubernetes:
+
+```bash
+# Install the Helm chart
+helm install my-release ./charts/simplebank
+
+# Upgrade an existing deployment
+helm upgrade my-release ./charts/simplebank
+
+# Uninstall the Helm chart
+helm uninstall my-release
+```
+
+The Helm chart deploys the application with the following features:
+- 5 replicas of the application
+- Pods are deployed only on nodes with the label `role: api`
+- Pod anti-affinity ensures only one pod per node
+- Includes StatefulSet manifests for PostgreSQL with 3 replicas and persistent storage
+
+For more details and configuration options, see the [charts/simplebank](/charts/simplebank) directory.
