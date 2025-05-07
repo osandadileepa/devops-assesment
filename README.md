@@ -56,5 +56,4 @@ Push your results to the personal private repository and share the final version
 
 ## Assessment Submission
 
-* Check the `SUBMISSION.md` file to check answers and instructions.
-* 
+* Check the `SUBMISSION.md` file to evaluate answers and instructions.

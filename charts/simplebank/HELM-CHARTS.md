@@ -55,18 +55,18 @@ helm uninstall release-1.0.0
 
 ### PostgreSQL parameters
 
-| Name                                 | Description                                                                 | Value           |
-| ------------------------------------ | --------------------------------------------------------------------------- | --------------- |
-| `postgresql.enabled`                 | Deploy PostgreSQL StatefulSet with 3 replicas                               | `true`          |
-| `postgresql.image.repository`        | PostgreSQL image repository                                                 | `postgres`      |
-| `postgresql.image.tag`               | PostgreSQL image tag                                                        | `15`            |
-| `postgresql.image.pullPolicy`        | PostgreSQL image pull policy                                                | `IfNotPresent`  |
-| `postgresql.persistence.enabled`     | Enable persistence using PVC                                                | `true`          |
-| `postgresql.persistence.size`        | PVC Storage Request for PostgreSQL volume                                   | `8Gi`           |
-| `postgresql.service.port`            | PostgreSQL service port                                                     | `5432`          |
-| `postgresql.auth.username`           | PostgreSQL username                                                         | `test`          |
-| `postgresql.auth.password`           | PostgreSQL password                                                         | `test`          |
-| `postgresql.auth.database`           | PostgreSQL database name                                                    | `bdb`           |
+| Name                                 | Description                                                                 | Value          |
+| ------------------------------------ | --------------------------------------------------------------------------- |----------------|
+| `postgresql.enabled`                 | Deploy PostgreSQL StatefulSet with 3 replicas                               | `true`         |
+| `postgresql.image.repository`        | PostgreSQL image repository                                                 | `postgres`     |
+| `postgresql.image.tag`               | PostgreSQL image tag                                                        | `12.22`         |
+| `postgresql.image.pullPolicy`        | PostgreSQL image pull policy                                                | `IfNotPresent` |
+| `postgresql.persistence.enabled`     | Enable persistence using PVC                                                | `true`         |
+| `postgresql.persistence.size`        | PVC Storage Request for PostgreSQL volume                                   | `8Gi`          |
+| `postgresql.service.port`            | PostgreSQL service port                                                     | `5432`         |
+| `postgresql.auth.username`           | PostgreSQL username                                                         | `test`         |
+| `postgresql.auth.password`           | PostgreSQL password                                                         | `test`         |
+| `postgresql.auth.database`           | PostgreSQL database name                                                    | `bdb`          |
 
 ## Configuration
 
@@ -74,11 +74,11 @@ The following table lists the configurable parameters of the SimpleBank chart an
 
 ### SimpleBank application configuration
 
-| Name                      | Description                                     | Value           |
-| ------------------------- | ----------------------------------------------- | --------------- |
-| `config.app.environment`  | Application environment                         | `prod`          |
-| `config.app.host`         | Application host                                | `0.0.0.0`       |
-| `config.app.port`         | Application port                                | `8080`          |
+| Name                      | Description                                     | Value      |
+| ------------------------- | ----------------------------------------------- |------------|
+| `config.app.environment`  | Application environment                         | `prod/dev` |
+| `config.app.host`         | Application host                                | `0.0.0.0`  |
+| `config.app.port`         | Application port                                | `8080`     |
 
 ## Persistence
 

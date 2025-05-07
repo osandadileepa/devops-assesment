@@ -1,12 +1,21 @@
 # Default values for simplebank.
-# This is a YAML-formatted file.
+namespace: simplebank
 
 replicaCount: 5
+
 
 image:
   repository: osandadileepa/simplebank
   tag: latest
   pullPolicy: IfNotPresent
+
+# Image pull secrets configuration for private DockerHub repository
+imagePullSecrets:
+  - name: dockerhub-secret
+
+# Docker Hub credentials for private repository access
+dockerHub:
+  configJson: '{"auths":{"https://index.docker.io/v1/":{"username":"your-username","password":"your-password","email":"your-email","auth":"base64-encoded-username:password"}}}'
 
 nameOverride: ""
 fullnameOverride: ""
@@ -62,6 +71,7 @@ config:
 
 # PostgreSQL configuration
 postgresql:
+  replicaCount: 2
   enabled: true
   image:
     repository: postgres
